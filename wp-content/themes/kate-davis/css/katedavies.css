@@ -34,6 +34,13 @@ p {
 	font-size: 0.85em;
 }
 
+button {
+	background: black;
+	color: white;
+	padding: 2px 15px;
+	border: 0;
+}
+
 .logo a{
 	font-family: 'MuseoSans-500', Helvetica, Arial, sans-serif;; ;
 	float: left;
@@ -681,3 +688,52 @@ input[type="checkbox"] {
 .carousel-fade .carousel-control {
   z-index: 2;
 }
+
+
+/* PDF */
+
+.pdf {
+	float: left;
+	width: 100%;
+}
+
+.pdf h5 {
+	overflow: hidden;
+	border-bottom: 1px solid #ebebeb;
+	padding-bottom: 10px;
+} 
+
+.pdf .item {
+	float: left;
+	height: 138px;
+	position: relative;
+	cursor: pointer;
+}
+
+#pdf-email {
+	position: absolute;
+	top: 14px;
+	right: 0;
+	width: 295px;
+}
+
+#pdf-email .content {
+	width: 207px;
+	float: left;
+	padding-right: 20px;
+	line-height: 13px;
+	font-size: 12px;
+}
+
+.pdf .item .overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url(../images/image-selected.png) center no-repeat;
+}
+
+.pdf .opacity {
+	opacity: 0.8;
+} 

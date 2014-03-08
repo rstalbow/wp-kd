@@ -1448,6 +1448,7 @@ pre code {
   .container {
     width: 1170px;
     padding: 0 20px;
+    position: relative;
   }
   .col-lg-1,
   .col-lg-2,
