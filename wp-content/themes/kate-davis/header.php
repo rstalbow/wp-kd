@@ -24,7 +24,12 @@
 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <?php 
-        if (wpmd_is_phone() == true or wpmd_is_tablet() == true) { ?>
+        if (wpmd_is_phone() == false AND wpmd_is_tablet() == false) { ?>
+        <link href="<?php echo get_template_directory_uri(); ?>/css/desktop.css" rel="stylesheet">
+     <?php }  ?>   
+
+        <?php if (wpmd_is_phone() == true or wpmd_is_tablet() == true) { ?>
+            <link href="<?php echo get_template_directory_uri(); ?>/css/katedavies.css" rel="stylesheet">
             <script>
                 $(document).bind("mobileinit", function(){
                     $.mobile.ajaxEnabled = false;

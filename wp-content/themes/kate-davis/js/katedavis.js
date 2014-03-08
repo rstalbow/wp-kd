@@ -28,7 +28,7 @@ function closeThumbnails() {
     $('.carousel').carousel({
         interval: 5000,
         pause: 'none'
-    })
+    });
     $('.thumbnail-toggle').removeClass('current');
     $('.thumbnail-toggle a').removeClass('close-thumbnails-link').addClass('show-thumbnails-link');
 }
