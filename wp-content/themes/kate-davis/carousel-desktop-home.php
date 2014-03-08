@@ -1,11 +1,13 @@
 <script type="text/javascript">
 $(document).ready(function() {  
-    windowHeight = $(window).height();
-    imageHeight = windowHeight - 110;
+        <?php if (wpmd_is_phone() == false and wpmd_is_tablet() == false): ?>
 
-    $(".item img").each(function(){
-        $(".item > img").height(imageHeight);
-    });
+            imageResize();
+
+            $(window).resize(function() {
+                imageResize();  
+            });
+        <?php endif; ?>  
 });
 </script>
 

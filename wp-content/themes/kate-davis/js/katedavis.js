@@ -45,7 +45,6 @@ function thumbnailsOpenCarousel(id) {
 function imageResize() {
     windowHeight = $(window).height();
     imageHeight = windowHeight - 110;
-
     $(".item img").each(function(){
         $(".item > img").height(imageHeight);
     });

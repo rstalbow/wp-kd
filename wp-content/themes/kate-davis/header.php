@@ -24,9 +24,15 @@
 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <?php 
-        if (wpmd_is_phone() == true or wpmd_is_tablet() == true) {
-            print '<script src="http://code.jquery.com/mobile/git/jquery.mobile-git.js"></script>';
-        }
+        if (wpmd_is_phone() == true or wpmd_is_tablet() == true) { ?>
+            <script>
+                $(document).bind("mobileinit", function(){
+                    $.mobile.ajaxEnabled = false;
+                    $.mobile.loadingMessage = false;
+                });
+            </script>
+            <script src="http://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.js"></script>
+        <?php }
     ?>
 
 	<?php wp_head(); ?>

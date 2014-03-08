@@ -20,17 +20,18 @@ $pagetitle = get_the_title();
         })
 
         $(".thumbnail-toggle a").on( "click", function(e) {
+            $(this).removeClass('ui-link');
             var myClass = $(this).attr("class");
             if(myClass == "close-thumbnails-link"){
                 closeThumbnails();
-            } else if (myClass == "show-thumbnails-link"){
+            } else if (myClass == "show-thumbnails-link" || myClass == "show-thumbnails-link ui-link"){
                 showThumbnails();
             }
         });
 
         $(".close-thumbnails a").on( "click", function(e) {
             var myClass = $(this).attr("class");
-            if(myClass == "close-thumbnails-link"){
+            if(myClass == "close-thumbnails-link" || myClass == "close-thumbnails-link ui-link"){
                 closeThumbnails();
             } else if (myClass == "show-thumbnails-link"){
                 showThumbnails();
@@ -52,11 +53,14 @@ $pagetitle = get_the_title();
             }); 
         <?php endif; ?>
 
-        imageResize();
+        <?php if (wpmd_is_phone() == false and wpmd_is_tablet() == false): ?>
 
-        $(window).resize(function() {
-            imageResize();  
-        });
+            imageResize();
+
+            $(window).resize(function() {
+                imageResize();  
+            });
+        <?php endif; ?>     
    
     });
         
