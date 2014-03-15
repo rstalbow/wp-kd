@@ -737,3 +737,25 @@ input[type="checkbox"] {
 .pdf .opacity {
 	opacity: 0.8;
 } 
+
+#emailForm .close-thumbnails {
+	top: 15px;
+	right: 35px;
+}
+
+#emailForm .header {
+	padding: 10px 10px 5px 35px;
+	border-bottom: 1px solid #ebebeb;
+}
+
+#emailForm h3 {
+	margin-top: 10px;
+}
+
+#emailForm form {
+	padding: 10px 35px 25px 35px;
+}
+
+#emailForm  .form textarea {
+	height: 100px;
+}

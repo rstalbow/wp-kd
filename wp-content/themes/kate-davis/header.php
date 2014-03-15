@@ -22,6 +22,8 @@
     <!-- Custom styles for this template -->
     <link href="<?php echo get_template_directory_uri(); ?>/css/katedavies.css" rel="stylesheet">
 
+    <link href="<?php echo get_template_directory_uri(); ?>/css/jquery-ui-1.10.4.css" rel="stylesheet">
+
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <?php 
         if (wpmd_is_phone() == false AND wpmd_is_tablet() == false) { ?>
