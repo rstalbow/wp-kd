@@ -650,10 +650,7 @@ input[type="checkbox"] {
 }
 
 @media (min-width: 1400px) {
-	.carousel img.portrait,
-	.carousel img.landscape {
-		max-height: 87%;
-	}
+	
 }
 
 .carousel-fade .carousel-inner .item {
