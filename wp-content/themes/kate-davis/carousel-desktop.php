@@ -1,4 +1,3 @@
-
 <?php
 
 $category = get_the_title();

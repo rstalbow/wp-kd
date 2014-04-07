@@ -19,13 +19,19 @@ $pagetitle = 'Home';
             interval: 5000,
             pause: 'none'
         })
+
+        imageResize();
+
+        $(window).resize(function() {
+            imageResize();  
+        });
     });          
 </script>
 
 	<div id="carousel" class="carousel carousel-fade slide">    
         <div class="carousel-inner"> 
             <?php 
-                if (wpmd_is_phone() == true) {
+                if (wpmd_is_phone() == true or wpmd_is_tablet() == true) {
                     include('carousel-mobile-home.php');
                 } else {
                     include('carousel-desktop-home.php');

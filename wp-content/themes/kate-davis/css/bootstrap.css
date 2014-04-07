@@ -1448,7 +1448,6 @@ pre code {
   .container {
     width: 1170px;
     padding: 0 20px;
-    position: relative;
   }
   .col-lg-1,
   .col-lg-2,
@@ -1798,6 +1797,13 @@ table th[class*="col-"] {
 @media (min-width: 1400px) {
   .container {
     width: 1370px;
+    padding: 0 20px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .container {
+    width: 1770px;
     padding: 0 20px;
   }
 }
@@ -4321,7 +4327,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar {
   position: relative;
-  min-height: 50px;
+  min-height: 36px;
   margin-bottom: 20px;
   border: 1px solid transparent;
 }
@@ -4448,7 +4454,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
     margin-right: 0;
     margin-left: 0;
     width: 100%; 
-    margin: 12px 0; 
+    margin: 2px 0; 
     position: relative;
   }
 }
@@ -4484,7 +4490,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   border-width: 0 0 1px;
   background: white;
   border-bottom: 1px solid #ebebeb;
-  height: 80px;
+  height: 65px;
   letter-spacing: 1px;
 }
 
@@ -4516,8 +4522,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-toggle {
   position: relative;
   float: right;
-  padding: 9px 10px;
-  margin: 19px 20px 0px 20px;
+  padding: 13px 10px;
+  margin: 10px 20px 0px 20px;
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
@@ -4545,8 +4551,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-nav > li > a {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   line-height: 20px;
 }
 
@@ -4580,12 +4586,12 @@ textarea.input-group-sm > .input-group-btn > .btn {
   }
   .navbar-nav > li {
     float: left;
-    margin: 0 2.5em;
-    padding-top: 13px;
+    margin: 0 4.1em;
+    padding-top: 11px;
   }
   .navbar-nav > li > a {
     padding-top: 15px;
-    padding-bottom: 15px;
+    padding-bottom: 13px;
   }
 }
 

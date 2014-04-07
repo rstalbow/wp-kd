@@ -14,6 +14,7 @@ function showThumbnails() {
     $('.carousel-thumbnail-icon').hide();
     $('.image-name').hide();
     $('.image-count').hide();
+    $('.thumbstxt').show();
     $('.thumbnail-toggle').addClass('current');
     $('.thumbnail-toggle a').addClass('close-thumbnails-link').removeClass('show-thumbnails-link');
 }
@@ -29,6 +30,7 @@ function closeThumbnails() {
         interval: 5000,
         pause: 'none'
     });
+    $('.thumbstxt').hide();
     $('.thumbnail-toggle').removeClass('current');
     $('.thumbnail-toggle a').removeClass('close-thumbnails-link').addClass('show-thumbnails-link');
 }
@@ -44,7 +46,14 @@ function thumbnailsOpenCarousel(id) {
 
 function imageResize() {
     windowHeight = $(window).height();
-    imageHeight = windowHeight - 110;
+    headerHeight = $('.navbar-fixed-top').height();
+    footerHeight = $('.navbar-fixed-bottom').height();
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        imageHeight = windowHeight - headerHeight - footerHeight;
+    } else {
+        imageHeight = windowHeight - headerHeight - footerHeight - 22;
+    }
+    
     $(".item img").each(function(){
         $(".item > img").height(imageHeight);
     });

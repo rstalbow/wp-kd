@@ -1,13 +1,10 @@
 <script type="text/javascript">
 $(document).ready(function() {  
-        <?php if (wpmd_is_phone() == false and wpmd_is_tablet() == false): ?>
+    imageResize();
 
-            imageResize();
-
-            $(window).resize(function() {
-                imageResize();  
-            });
-        <?php endif; ?>  
+    $(window).resize(function() {
+        imageResize();  
+    });
 });
 </script>
 

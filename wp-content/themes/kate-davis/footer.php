@@ -14,9 +14,11 @@
     <!-- Placed at the end of the document so the pages load faster -->
 
 	    <div class="navbar-fixed-bottom navbar navbar-inverse <?php if (is_page_template('media-category.php') or (is_front_page())) { print 'carousel-nav';}?>">
-	    <?php if (is_page_template('media-category.php') or (is_front_page())) 
-	    	{ print '<div class="line-left"></div>
-	    	<div class="line-right"></div>';
+	    <?php if (is_page_template('media-category.php'))
+	    	{ print '<div class="line-left"></div><span class="thumbstxt" style="display:none">Thumbs</span>
+	    	<div class="line-right"></div>'; }
+			if (is_front_page())
+	    	{ print '<div class="line-left"></div><div class="line-right"></div>';
 			}?>
 	    
 	    <div class="personal-details">

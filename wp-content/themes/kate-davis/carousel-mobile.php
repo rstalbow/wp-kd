@@ -38,7 +38,13 @@ foreach ($taxonomys as $taxonomy) {
     foreach ($posts_array as $post){
 
         $attachment_meta = wp_get_attachment_metadata($post->ID);
-        $imagesrc = wp_get_attachment_image_src($post->ID, 'medium');
+        
+        if (wpmd_is_phone() == true) {
+            $imagesrc = wp_get_attachment_image_src($post->ID, 'medium');
+            $imagesrc = $imagesrc[0];
+        } else {
+            $imagesrc = $post->guid;
+        }
         
         if($attachment_meta['width'] > $attachment_meta['height']) {
             $orientation = "landscape"; 
@@ -47,7 +53,7 @@ foreach ($taxonomys as $taxonomy) {
         }
         print '<div class="item'; if ($count == 0) {print' active';} 
         print '">';
-        print '<img id="carouselid-'.$post->ID.'" src="'.$imagesrc[0].'" alt="'.$post->post_title.'"  class="'.$orientation.'">';
+        print '<img id="carouselid-'.$post->ID.'" src="'.$imagesrc.'" alt="'.$post->post_title.'"  class="'.$orientation.'">';
         if ($showtitle == true){
             print '<div class="image-name"><span id="picture-name">'.$post->post_title.'</span></div>';
         }
