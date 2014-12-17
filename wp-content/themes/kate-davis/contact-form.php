@@ -18,7 +18,7 @@
             <input type="text" name="email" id="email" value="<?php print $_POST['email']?>">
             <br/><br/>
             <label> Message </label>
-            <textarea name="message" id="message"><?php print $_POST['message']?></textarea>
+            <textarea name="message" id="message" cols="30" rows="4"><?php print $_POST['message']?></textarea>
             <br/><br/>
             <input type="checkbox" id="sendcopy" name="sendcopy" <?php echo (isset($_POST['sendcopy'])?'checked="checked"':'') ?>>
             <label style="margin-bottom:0px;" for="sendcopy"><span></span>Please send a copy to my email address</label>

@@ -15,6 +15,7 @@ $taxonomys = get_terms('media-category',$args);
 $count = 0;
 print ' <div id="thumbnail-images">';
 print '<h5>'.$pagetitle.'</h5>';
+print ' <div id="thumbnail-items">';
 foreach ($taxonomys as $taxonomy) {    
     $args = array(
         'post_type' => 'attachment',
@@ -45,5 +46,5 @@ foreach ($taxonomys as $taxonomy) {
     print '</div>';
     $count++;
 }
- print '</div>';
+ print '</div></div>';
 ?>

@@ -22,35 +22,42 @@
     <!-- Custom styles for this template -->
     <link href="<?php echo get_template_directory_uri(); ?>/css/katedavies.css" rel="stylesheet">
 
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <?php 
-        if (wpmd_is_phone() == false AND wpmd_is_tablet() == false) { ?>
-        <link href="<?php echo get_template_directory_uri(); ?>/css/desktop.css" rel="stylesheet">
-     <?php }  ?>   
+    <link href="<?php echo get_template_directory_uri(); ?>/css/jquery-ui-1.10.4.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon.ico" />
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script> 
 
         <?php if (wpmd_is_phone() == true or wpmd_is_tablet() == true) { ?>
             <link href="<?php echo get_template_directory_uri(); ?>/css/katedavies.css" rel="stylesheet">
             <script>
-                $(document).bind("mobileinit", function(){
+                $(document).on("mobileinit", function(){
                     $.mobile.ajaxEnabled = false;
                     $.mobile.loadingMessage = false;
+                    $html.removeClass( "ui-loading" );
                 });
             </script>
             <script src="http://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.js"></script>
         <?php }
+
+        if (wpmd_is_tablet() == true) { ?>
+            <script>    
+                $(document).on("touchmove", function(evt) { evt.preventDefault() });
+                $(document).on("touchmove", ".scrollable", function(evt) { evt.stopPropagation() });
+            </script>
+       <?php }
     ?>
 
 	<?php wp_head(); ?>
 </head>
 
-<body>
+<body <?php body_class($class); ?>>
 
 	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -64,14 +71,15 @@
                 <div id="right-nav" class="collapse navbar-collapse">
                     <?php wp_nav_menu( array( 'menu' => 'right menu', 'menu_class' => 'nav navbar-nav' ) ); ?>    
                 </div>
-                <div id="pdfcreator">
-                    <a href="#"><img style="margin-right: 2px; margin-top: -4px;" src="<?php echo get_template_directory_uri(); ?>/images/pdf-icon.png"/>PDF</a>
-                </div> 
+                 
             </div>
             <div id="mobile-nav" class="collapse navbar-collapse">
                 <?php wp_nav_menu( array( 'menu' => 'mobile menu', 'menu_class' => 'nav navbar-nav' ) ); ?> 
             </div><!--/.nav-collapse -->   
         </div>
+        <!--<div id="pdfcreator">
+            <a href="#"><img style="margin-right: 2px; margin-top: -4px;" src="<?php echo get_template_directory_uri(); ?>/images/pdf-icon.png"/>PDF</a>
+        </div>-->
     </div>
 
     <div class="container">

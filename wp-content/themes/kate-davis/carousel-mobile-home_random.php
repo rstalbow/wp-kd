@@ -56,9 +56,6 @@ foreach ($taxonomys as $taxonomy) {
         print '<div class="item'; if ($count == 0) {print' active';} 
         print '">';
         print '<img src="'.$post->guid.'" alt="'.$post->post_title.'" class="'.$orientation.'">';
-        if ($showtitle == true){
-            print '<div class="image-name"><span id="picture-name">'.$post->post_title.'</span></div>';
-        }
         print '</div>';
         $count++;
         $imagecount++;

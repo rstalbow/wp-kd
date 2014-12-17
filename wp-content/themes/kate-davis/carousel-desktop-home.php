@@ -1,13 +1,10 @@
 <script type="text/javascript">
 $(document).ready(function() {  
-        <?php if (wpmd_is_phone() == false and wpmd_is_tablet() == false): ?>
+    imageResize();
 
-            imageResize();
-
-            $(window).resize(function() {
-                imageResize();  
-            });
-        <?php endif; ?>  
+    $(window).resize(function() {
+        imageResize();  
+    });
 });
 </script>
 
@@ -41,9 +38,10 @@ foreach ($taxonomys as $taxonomy) {
             )
         )
     );
-
+    
     $taxterm = 'media-category_'.$taxonomy->term_id;
     $showtitle = get_field('showtitle', $taxterm);
+    $categoryname = $taxonomy->name;
     $posts_array = get_posts($args);
     $post_count = 1;
     print '<div class="item'; if ($count == 0) {print' active';} 
@@ -68,7 +66,7 @@ foreach ($taxonomys as $taxonomy) {
     $count++;
     print '<div class="image-count">'.$count.' <span class="of">OF</span> <span id="image-total">'.$slidecount.'</span></div>';
     if ($showtitle == true){
-        print '<div class="image-name"><span id="picture-name">'.$imagename.'</span></div>';
+        print '<div class="image-name"><span id="picture-name">'.$categoryname.'</span></div>';
     }
     print '</div>';
     

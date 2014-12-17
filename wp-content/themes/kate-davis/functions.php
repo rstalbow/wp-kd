@@ -23,12 +23,12 @@ function formValidation() {
 }
 
 function emailData() {
-	if ($_POST['sendcopy'] == 1){
+	if ($_POST['sendcopy'] == "on"){
 		$to = 'kate@katedavis.co.uk,'.$_POST['email'];
 	} else {
 		$to = 'kate@katedavis.co.uk';
 	}
-	
+
 	$subject = 'Website query';
 	$message = 'Email: '.$_POST['email']." Message: ".$_POST['message']." Updates: ".$_POST['updates'];
 	$headers = 'From: kate@katedavis.co.uk';

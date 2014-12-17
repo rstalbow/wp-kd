@@ -34,14 +34,21 @@ p {
 	font-size: 0.85em;
 }
 
-.logo a{
+button {
+	background: black;
+	color: white;
+	padding: 2px 15px;
+	border: 0;
+}
+
+.logo a {
 	font-family: 'MuseoSans-500', Helvetica, Arial, sans-serif;; ;
 	float: left;
-	padding-top: 14px;
 	width: 28%;
 	text-align: center;
 	color: #3e3e3e;
 	letter-spacing: 6px;
+	margin-top: 9px;
 }
 
 .logo a:hover {
@@ -57,8 +64,7 @@ p {
 .carousel,
 .carousel-inner {
 	width: 100%;
-	text-align: center;
-	
+	text-align: center;	
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -66,7 +72,7 @@ p {
 }
 
 .carousel-inner {
-	top:80px;
+	top:65px;
 	height: 100%;
 }
 
@@ -82,14 +88,14 @@ p {
 }
 
 .carousel img.landscape {
-
 	display: inline-block;
 	margin: 0 auto;
 }
 
 .carousel .image-name,
 .carousel .image-count {
-	color: #787878
+	color: #787878;
+	font-size: 11px;
 }
 
 .carousel .of {
@@ -122,9 +128,9 @@ p {
 
 #pdfcreator {
 	position: absolute;
-	right: -10px;
-	top: 30px;
-	font-size: 11.5px;
+	right: 82px;
+	top: 32px;
+	font-size: 0.73em;
 }
 
 #pdfcreator a {
@@ -134,19 +140,17 @@ p {
 .thumbnail-toggle {
 	z-index: 2000;
 	position: fixed;
-	bottom: 18px;
-	left: 80px;
-	width: 12px;
-	height: 12px;
-	background: url(../images/thumbnail-icon.png) no-repeat -58px -14px
+	bottom: 7px;
+	left: 85px;
+	width: 18px;
+	height: 20px;
+	background: url(../images/thumbnail-icon.png) no-repeat -43px -10px;
 }
 
 .thumbnail-toggle:hover {
-	background: url(../images/thumbnail-icon.png) no-repeat -39px -14px
+	background: url(../images/thumbnail-icon.png) no-repeat -22px -10px;
 }
-.current {
-	background: url(../images/thumbnail-icon.png) no-repeat -26px -14px
-}
+
 
 .thumbnail-toggle a {
 	width: 100%;
@@ -154,22 +158,34 @@ p {
 	display: block
 }
 
+.thumbnail-toggle.current {
+	background: url(../images/thumbnail-icon.png) no-repeat -66px -10px;
+}
+
 .image-name {
 	position: absolute;
-	bottom: 93px;
+	bottom: 75px;
 	left: 190px;
 	width: auto;
 	z-index: 10000;
 	padding: 0 20px;
 }
 
+.home .image-name{
+	left: 143px;
+}
+
 .image-count {
 	position: absolute;
-	bottom: 93px;
+	bottom: 75px;
 	left: 115px;
 	width: auto;
 	z-index: 10000;
 	padding: 0 20px;
+}
+
+.home .image-count {
+	left: 73px;
 }
 
 .current-menu-item a{
@@ -208,6 +224,8 @@ p {
 	width: 100%;
 	height: 140px;
 	padding: 5px;
+	overflow: auto;
+  	-webkit-overflow-scrolling: touch
 }
 
 .form input[type="submit"] {
@@ -234,19 +252,25 @@ p {
 	width: 100%;
 	overflow: auto;
 	margin-top: 10px;
+	margin-bottom: 40px;
 } 
+
+.thumbnails #thumbnail-images #thumbnail-items {
+	padding: 0px 10px;
+}
 
 .thumbnails #thumbnail-images h5 {
 	border-bottom: 1px solid #ebebeb;
-	padding: 20px 0 25px 0;
+	padding: 25px 0 10px 0;
 }
 
 .thumbnails #thumbnail-images .image {
 	float: left;
 	margin-right: 5px;
 	position: relative;
-	margin-top: 10px;
+	margin-top: 5px;
 	cursor: pointer;
+	height: 130px;
 } 
 
 .thumbnails #thumbnail-images .overlay {
@@ -292,7 +316,7 @@ p {
 .close-thumbnails {
 	position: absolute;
 	right: 30px;
-	top: 35px;
+	top: 34px;
 	width: 90px;
 }
 
@@ -338,7 +362,7 @@ p {
 /**** CONTACT ****/
 
 #contact {
-	margin: 6% auto 50px auto;
+	margin: 2% auto 50px auto;
 	width: 35%;
 }
 
@@ -362,36 +386,96 @@ input[type="checkbox"] {
 #contact .details {
 	padding: 40px 0 20px 0;
 	overflow: auto;
+	font-size: 15px;
+}
+
+#contact .details a {
+	color: #333333;
+	letter-spacing: 1px;
 }
 
 #contact .details span{
 	width: 50%;
 	height: 16px;
+	font-size: 13px;
+}
+
+.thumbstxt {
+	font-size: 12px;
+	position: absolute;
+	left: 127px;
+	bottom: 8px;
+	color: #787878;
+	width: 51px;
+}
+
+#arrow-right {
+	display: none;
+}
+
+#arrow-left {
+	display: none;
+}
+
+input[type="checkbox"] {
+    display:none;
+}
+
+input[type="checkbox"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-3px 17px 0 0;
+    vertical-align:middle;
+    background:url(../images/checkbox.png) left top no-repeat;
+    cursor:pointer;
+}
+
+input[type="checkbox"]:checked + label span {
+    background:url(../images/checkbox.png) -26px top no-repeat;
+}
+
+input[type=text],
+textarea{
+	border: 1px solid #a8a8a8!important;
 }
 
 @media only screen and (min-width: 767px) {
+
+	#arrow-left,
+	#arrow-right {
+		display: none!important;
+	}
 
 	#mobile-nav { 
 		display: none!important;
 	}
 
 	.navbar-fixed-bottom {
-		height: 45px;
-		padding: 15px 64px;
+		height: 36px;
+		padding: 10px 64px;
 	}
 
 	.navbar-fixed-bottom .line-left{
 		border-left: 1px solid #a8a8a8;
-		height: 20px;
+		height: 15px;
 		position: absolute;
 		left: 115px;
 	}
 
-	.navbar-fixed-bottom  .line-right{
+	.navbar-fixed-bottom .line-right{
 		border-left: 1px solid #a8a8a8;
-		height: 20px;
+		height: 15px;
 		position: absolute;
 		left: 190px;
+	}
+
+	.home .navbar-fixed-bottom .line-right {
+		left: 150px;
+	}
+
+	.home .navbar-fixed-bottom .line-left {
+		left: 70px;
 	}
 
 	.carousel-nav .image-total {
@@ -402,7 +486,8 @@ input[type="checkbox"] {
 	}	
 
 	.copy {
-		margin-top: 17%;
+		margin-top: 10%;
+		letter-spacing: 1px;
 	}
 
 	.arrow-left {
@@ -430,7 +515,7 @@ input[type="checkbox"] {
 		top: 0;
 		right: 0;
 		width: 50%;
-		height: 100%;
+		height: 90%;
 	}
 
 	.arrow-left a,
@@ -446,6 +531,57 @@ input[type="checkbox"] {
 
 	.arrow-left a{
 		cursor: url(../images/arrow-left.png), auto; 
+	}
+
+	.navbar-nav {
+		font-size: 0.73em;
+	}
+
+	.navbar-brand {
+		font-size: 1.8em;
+		padding: 9px 0;
+	}
+
+	.logo a {
+		letter-spacing: 4px;
+		margin-top: 6px;
+	}
+
+	.personal-details {
+		font-size: 11px;
+	}
+
+	.form textarea {
+		height: 100px;
+	}
+
+	.form input[type="submit"] {
+		margin-top: 20px;
+	}
+
+	#contact .details {
+		padding: 30px 0 20px 0;
+	}
+}
+
+@media only screen and (max-width: 767px) and (orientation:portrait) {
+
+	.carousel img.landscape {
+		margin-top: 22%;
+	}
+}
+
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape) {
+
+	.image-count {
+		bottom: 94px;
+	}
+}
+
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+
+	.thumbstxt {
+		left: 53px;
 	}
 }
 
@@ -469,11 +605,7 @@ input[type="checkbox"] {
 	.nav {
 		border-top: 1px solid #ebebeb;
 		text-align: center;
-	}
-
-	.carousel-nav {
-		height: 10%;
-		padding: 20px;
+		font-size: 0.95em;
 	}
 
 	.arrow-left {
@@ -491,7 +623,7 @@ input[type="checkbox"] {
 	}
 
 	.image-name {
-		bottom: 23px;;
+		bottom: 10px;
 		left: 50px;
 		position: fixed;
 		border-left: none;
@@ -512,12 +644,22 @@ input[type="checkbox"] {
 		width: 305px;
 		float: none!important;
 		font-size: 11px;
-		margin-top: 15px;
+		margin-top: 10px;
 	}
 
-	.navbar-fixed-bottom .personal-details span{
+	.navbar-fixed-bottom .personal-details span {
 		padding: 0 10px;
 	}
+
+	.thumbstxt {
+		position: absolute;
+		left: 50%;
+		bottom: 8px;
+		color: #787878;
+		width: 51px;
+		margin-left: -25px;
+	}
+
 
 	#carousel.personal-details, 
 	.personal-details span.copyright,
@@ -527,20 +669,9 @@ input[type="checkbox"] {
 		display: none;
 	}
 
-	.carousel, .carousel-inner {
-		height: 100%;
-	}
-
-	.carousel img.portrait  {
-		max-height: 80%;
-		max-width: 89%;
-	}
-
 	.carousel img.landscape {
-		position: absolute;
-		left: 0;
-		top: 50%;
-		margin-top: -190px;
+		height: auto!important;
+		max-height: 215px!important;
 	}
 
 	.copy {
@@ -550,11 +681,11 @@ input[type="checkbox"] {
 
 	.form {
 		width: 80%;
-		height: 550px;
+		height: 430px;
 	}
 
 	.logo {
-		width: 180px;
+		width: 170px;
 		margin: 0 auto;
 		float: none;
 		padding-top: 4px;
@@ -562,16 +693,17 @@ input[type="checkbox"] {
 
 	.logo a {
 		width: 100%;
-		font-size: 2.3em;
-		letter-spacing: 2px;
+		font-size: 1.5em;
+		letter-spacing: 1.5px;
 	}
 
 	.thumbnails #thumbnail-images h5 {
-		padding: 13px 0 25px 6px;
+		padding: 23px 0 12px 16px;
 	}
 
 	.navbar-brand {
-		line-height: 46px
+		line-height: 25px;
+		margin-top: 0px!important;
 	}
 
 	#createpdf {
@@ -600,28 +732,33 @@ input[type="checkbox"] {
 
 	.thumbnail-toggle {
 		position: fixed;
-		top: 24px;
+		top: 3px;
 		left: 20px;
 		bottom: 0;
 		height: 26px;
 		width: 26px;
-		background: url(../images/thumbnail-icon.png) no-repeat -100px 0px;
+		background: url(../images/thumbnail-icon.png) no-repeat -89px 0px;
 	}
 
 	.thumbnail-toggle:hover {
-		background: url(../images/thumbnail-icon.png) no-repeat -74px 0px;
+		background: url(../images/thumbnail-icon.png) no-repeat -89px 0px;
 	}
 
-	.current {
-		background: url(../images/thumbnail-icon.png) no-repeat 2px 0px;
+	.thumbnail-toggle.current {
+		width:20px;
+		background: url(../images/thumbnail-icon.png) no-repeat -65px 0px
+	}
+
+	.thumbnails {
+		margin-top: 10px;
 	}
 
 	.image-count {
-		bottom: 23px;
-		right: 45px;
-		left: initial;
+		bottom: 10px;
+		left: 50%;
 		position: fixed;
 		border-left: none;
+		margin-left: -40px;
 	}
 
 	.copy {
@@ -635,6 +772,78 @@ input[type="checkbox"] {
 	#contact {
 		width:100%
 	}
+
+	.copy p {
+		margin-bottom: 15px;
+	}
+
+	.copy {
+		letter-spacing: 1px;
+		line-height: 20px;
+	}
+
+	.form .details {
+		display: none;
+	}
+
+	.form textarea {
+		height: 100px;
+	}
+
+	.form input[type="submit"] {
+		margin-top: 20px;
+	}
+
+	label {
+		margin-top: 5px;
+	}
+
+	.navbar-fixed-top {
+		height: 45px;
+	}
+
+	.navbar-toggle {
+		padding: 4px 10px;
+	}
+
+	.carousel-inner {
+		top: 45px;
+	}
+
+	.thumbnails #thumbnail-images {
+		margin-top: -12px;
+	}
+
+	.close-thumbnails {
+		top: 7px;
+		right: 14px;
+	}
+
+	#arrow-right {
+		display: block;
+		position: absolute;
+		right: 15px;
+		top: 7px;
+	}
+
+	#arrow-left {
+		display: block;
+		position: absolute;
+		left: 15px;
+		top: 7px;
+	}
+
+	input[type="checkbox"] + label span {
+	    margin:-3px 5px 0 0;
+	}
+}
+
+
+@media only screen and (max-width: 767px) and (orientation:landscape) {
+
+	.carousel img.landscape {
+		max-height: 250px!important;
+	}
 }
 
 @media (min-width:768px) and (max-width:924px) {
@@ -647,20 +856,222 @@ input[type="checkbox"] {
 		font-size: 1.8em;
 	}
 
+	#contact .details span {
+		font-size: 10px;
+	}
+}
+
+@media (min-width:1024px) and (max-width:1024px) {
+	
+	#pdfcreator {
+		right: 15px;
+	}
+
+	.navbar-fixed-bottom {
+		padding: 10px 0px;
+	}
+
+	#contact {
+		margin: 5% auto 50px auto;
+	}
 }
 
 @media (min-width: 1400px) {
+
+	.navbar-fixed-bottom .line-left,
+	.navbar-fixed-bottom .line-right {
+		height: 20px;
+	}
+
+	#contact .details span {
+		font-size: 15px;
+	}
+
+	.navbar-fixed-top {
+		height: 80px;
+	}
+
+	.navbar-nav > li {
+    	padding-top: 14px;
+  	}
+
+	.container > .navbar-header, .container > .navbar-collapse {
+		margin-right: 0;
+		margin-left: 0;
+		width: 100%;
+		margin: 12px 0;
+		position: relative;
+	}
+
+	.navbar-fixed-bottom {
+		padding: 10px 64px;
+	}
+
+	.thumbnail-toggle {
+		bottom: 13px;
+	}
+
+	.carousel-inner {
+		top: 80px;
+	}
+
+	.image-name ,
+	.image-count {
+		bottom: 93px;
+		font-size: 14px;
+	}
+
+	.navbar-nav > li {
+		float: left;
+		margin: 0 6em;
+		padding-top: 11px;
+	}
+
+	#contact {
+		margin: 8% auto 50px auto;
+	}
+
+	.copy {
+		margin-top: 18%;
+	}
+
+	.copy p {
+		font-size: 0.95em;
+	}
 	
+	label {
+		margin: 20px 0 10px 0;
+	}
+
+	.form input[type="text"] {
+		margin-bottom: 10px;
+	}
+
+	#pdfcreator {
+		top: 39px;
+	}
+
+	.image-count {
+		bottom: 89px;
+	}
+
+	.image-name {
+		bottom: 88px;
+	}
+
+	.thumbnail-toggle {
+		bottom: 4px;
+	}
+
+	.thumbstxt {
+		bottom: 6px;
+	}
+
+}
+
+@media (min-width: 1800px) {
+	.navbar-nav > li {
+		margin: 0 7.3em;
+	}  
+
+	#contact {
+		width: 25%;
+	}
+
+	.copy {
+		width: 40%;
+	}
+	
+	.carousel .image-name,
+	.carousel .image-count {
+		color: #787878;
+		font-size: 14px;
+	}
+
+	#pdfcreator,
+	.navbar-nav {
+		font-size: 0.85em;
+	}
+
+	.personal-details {
+		font-size: 14px;
+	}
+
+	.navbar-brand {
+		font-size: 2.3em;
+	}
+
+	.logo a {
+		letter-spacing: 6px;
+	}
+
+	.image-name,
+	.image-count {
+		bottom: 85px;
+	}
+
+}
+
+@media (min-width:768px) and (max-width:768px) {
+	.navbar-nav > li {
+		margin: 0 2em;
+	}
+
+	#pdfcreator {
+		right: 10px;
+	}
+
+	.navbar-fixed-bottom {
+		padding: 10px 0px;
+	}
+
+	.thumbnail-toggle {
+		left: 15px;
+	}
+
+	.navbar-fixed-bottom .line-left {
+		left: 46px;
+	}
+
+	.image-count {
+		left: 43px;
+	}
+
+	.navbar-fixed-bottom .line-right {
+		left: 111px;
+	}
+
+	.image-name {
+		left: 110px;
+	}
+
+	#contact {
+		width: 55%;
+		margin: 10% auto 50px auto;
+	}
+
+	#contact .details span {
+		font-size: 14px;
+	}
+
+	.navbar-fixed-bottom .personal-details span {
+		padding: 0 10px;
+	}
+
+	.carousel img.landscape {
+		max-height: 490px;
+		margin-top: 20%;
+	}
 }
 
 .carousel-fade .carousel-inner .item {
-  -webkit-transition: opacity 0.5s ease-in-out;
+  	-webkit-transition: opacity 0.5s ease-in-out;
 	-moz-transition: opacity 0.5s ease-in-out;
 	-ms-transition: opacity 0.5s ease-in-out;
 	-o-transition: opacity 0.5s ease-in-out;
 	transition: opacity 0.5s ease-in-out;
 	opacity:0;
-  height: 100%;
+  	height: 100%;
 }
 .carousel-fade .carousel-inner .active {
   opacity: 1;
@@ -677,4 +1088,83 @@ input[type="checkbox"] {
 }
 .carousel-fade .carousel-control {
   z-index: 2;
+}
+
+
+/* PDF */
+
+.pdf {
+	float: left;
+	width: 100%;
+}
+
+.pdf h5 {
+	overflow: hidden;
+	border-bottom: 1px solid #ebebeb;
+	padding-bottom: 10px;
+} 
+
+.pdf .item {
+	float: left;
+	height: 138px;
+	position: relative;
+	cursor: pointer;
+}
+
+#pdf-email {
+	position: absolute;
+	top: 100px;
+	right: 98px;
+	width: 295px;
+}
+
+#pdf-email .content {
+	width: 207px;
+	float: left;
+	padding-right: 20px;
+	line-height: 13px;
+	font-size: 12px;
+}
+
+.pdf .item .overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url(../images/image-selected.png) center no-repeat;
+}
+
+.pdf .opacity {
+	opacity: 0.8;
+} 
+
+#emailForm .close-thumbnails {
+	top: 15px;
+	right: 35px;
+}
+
+#emailForm .header {
+	padding: 10px 10px 5px 35px;
+	border-bottom: 1px solid #ebebeb;
+}
+
+#emailForm h3 {
+	margin-top: 10px;
+}
+
+#emailForm form {
+	padding: 10px 35px 25px 35px;
+}
+
+#emailForm  .form textarea {
+	min-height: 100px;
+}
+
+.scrollBar
+{
+	width:10px; /* Set the width of the scrollbar */	
+	border-radius:5px; /* Remove if you want square corners*/	
+	background-color: #ccc; /* Set the scrollbar color*/	
+	transition: opacity 0.3s linear; /* Mouseover delay */	
 }

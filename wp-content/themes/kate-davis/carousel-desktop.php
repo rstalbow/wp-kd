@@ -1,4 +1,3 @@
-
 <?php
 
 $category = get_the_title();
@@ -31,6 +30,7 @@ foreach ($taxonomys as $taxonomy) {
 
     $taxterm = 'media-category_'.$taxonomy->term_id;
     $showtitle = get_field('showtitle', $taxterm);
+    $categoryname = $taxonomy->name;
     $posts_array = get_posts($args);
     $post_count = 1;
     print '<div class="item'; if ($count == 0) {print' active';} 
@@ -39,9 +39,14 @@ foreach ($taxonomys as $taxonomy) {
     if (count($posts_array) > 1){ 
         $twoimages = "twoimages";
     }
+    var_dump($post);die();
     foreach ($posts_array as $post){
 
         $attachment_meta = wp_get_attachment_metadata($post->ID);
+
+        $image_first = get_field('image_first', $post->ID);
+        
+
         $imagename = $post->post_title;
         if($attachment_meta['width'] > $attachment_meta['height']) {
             $orientation = "landscape"; 
@@ -55,7 +60,7 @@ foreach ($taxonomys as $taxonomy) {
     $count++;
     print '<div class="image-count">'.$count.' <span class="of">OF</span> <span id="image-total">'.$slidecount.'</span></div>';
     if ($showtitle == true){
-        print '<div class="image-name"><span id="picture-name">'.$imagename.'</span></div>';
+        print '<div class="image-name"><span id="picture-name">'.$categoryname.'</span></div>';
     }
     print '</div>';
     

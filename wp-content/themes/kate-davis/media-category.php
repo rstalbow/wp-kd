@@ -15,7 +15,7 @@ $pagetitle = get_the_title();
     var category = '<?php print $pagetitle; ?>';
     $(document).ready(function() {         
         $('.carousel').carousel({
-            interval: 5000,
+            interval: 500000,
             pause: 'none'
         })
 
@@ -51,17 +51,16 @@ $pagetitle = get_the_title();
             $('#carousel').swipeleft(function() {  
                 $(this).carousel('next');  
             }); 
-        <?php endif; ?>
 
-        <?php if (wpmd_is_phone() == false and wpmd_is_tablet() == false): ?>
+            $(document).on("touchmove", function(evt) { evt.preventDefault() });
+            $(document).on("touchmove", ".scrollable", function(evt) { evt.stopPropagation() });
+        <?php endif; ?>
 
             imageResize();
 
             $(window).resize(function() {
                 imageResize();  
-            });
-        <?php endif; ?>     
-   
+            });   
     });
         
 </script>
@@ -69,7 +68,7 @@ $pagetitle = get_the_title();
 	<div id="carousel" class="carousel carousel-fade slide">    
         <div class="carousel-inner"> 
             <?php 
-                if (wpmd_is_phone() == true) {
+                if (wpmd_is_phone() == true or wpmd_is_tablet() == true) {
                     include('carousel-mobile.php');
                 } else {
                     include('carousel-desktop.php');
@@ -77,10 +76,10 @@ $pagetitle = get_the_title();
             ?>            
         </div>
         <div class="arrow-left">
-            <a href="#carousel" class="arrow-left-btn left carousel-control" data-slide="prev"><img src="<?php echo get_template_directory_uri(); ?>/images/arrow-left.png" /></a>
+            <a href="#carousel" class="arrow-left-btn left carousel-control" data-slide="prev"></a>
         </div>
         <div class="arrow-right">
-            <a href="#carousel" class="arrow-right-btn right carousel-control" data-slide="next"><img src="<?php echo get_template_directory_uri(); ?>/images/arrow-right.png" /></a>
+            <a href="#carousel" class="arrow-right-btn right carousel-control" data-slide="next"></a>
         </div>   
     </div>
     <div class="thumbnails" style="display:none;">
@@ -90,15 +89,13 @@ $pagetitle = get_the_title();
                 <img src="<?php echo get_template_directory_uri(); ?>/images/close-btn.png" />
             </a>    
         </div>
-        <div id="thumbnail-images">
-            <?php
-                if (wpmd_is_phone() == true) {
-                    include('thumbnail-desktop.php');
-                } else {
-                    include('thumbnail-desktop.php');
-                } 
-            ?>
-        </div>
+        <?php
+            if (wpmd_is_phone() == true) {
+                include('thumbnail-desktop.php');
+            } else {
+                include('thumbnail-desktop.php');
+            } 
+        ?>
     </div>
 
 </div><!-- /.container -->
