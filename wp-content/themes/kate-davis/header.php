@@ -24,11 +24,9 @@
 
     <link href="<?php echo get_template_directory_uri(); ?>/css/jquery-ui-1.10.4.css" rel="stylesheet">
 
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <?php 
-        if (wpmd_is_phone() == false AND wpmd_is_tablet() == false) { ?>
-        <link href="<?php echo get_template_directory_uri(); ?>/css/desktop.css" rel="stylesheet">
-     <?php }  ?>   
+    <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon.ico" />
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script> 
 
         <?php if (wpmd_is_phone() == true or wpmd_is_tablet() == true) { ?>
             <link href="<?php echo get_template_directory_uri(); ?>/css/katedavies.css" rel="stylesheet">
@@ -79,9 +77,9 @@
                 <?php wp_nav_menu( array( 'menu' => 'mobile menu', 'menu_class' => 'nav navbar-nav' ) ); ?> 
             </div><!--/.nav-collapse -->   
         </div>
-        <div id="pdfcreator">
+        <!--<div id="pdfcreator">
             <a href="#"><img style="margin-right: 2px; margin-top: -4px;" src="<?php echo get_template_directory_uri(); ?>/images/pdf-icon.png"/>PDF</a>
-        </div>
+        </div>-->
     </div>
 
     <div class="container">

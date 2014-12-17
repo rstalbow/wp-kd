@@ -89,15 +89,13 @@ $pagetitle = get_the_title();
                 <img src="<?php echo get_template_directory_uri(); ?>/images/close-btn.png" />
             </a>    
         </div>
-        <div id="thumbnail-images">
-            <?php
-                if (wpmd_is_phone() == true) {
-                    include('thumbnail-desktop.php');
-                } else {
-                    include('thumbnail-desktop.php');
-                } 
-            ?>
-        </div>
+        <?php
+            if (wpmd_is_phone() == true) {
+                include('thumbnail-desktop.php');
+            } else {
+                include('thumbnail-desktop.php');
+            } 
+        ?>
     </div>
 
 </div><!-- /.container -->

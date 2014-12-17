@@ -25,6 +25,19 @@ $pagetitle = 'Home';
         $(window).resize(function() {
             imageResize();  
         });
+
+         <?php if (wpmd_is_phone() == true or wpmd_is_tablet() == true): ?>
+            $('#carousel').swiperight(function() {  
+                $(this).carousel('prev');  
+            }); 
+
+            $('#carousel').swipeleft(function() {  
+                $(this).carousel('next');  
+            }); 
+
+            $(document).on("touchmove", function(evt) { evt.preventDefault() });
+            $(document).on("touchmove", ".scrollable", function(evt) { evt.stopPropagation() });
+        <?php endif; ?>
     });          
 </script>
 
